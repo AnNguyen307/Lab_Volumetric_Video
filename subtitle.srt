@@ -1,0 +1,111 @@
+1
+00:00:00,000 --> 00:00:15,000
+Chào mừng thầy cô và các bạn đến với phần trình bày báo cáo về chủ đề 'Volumetric Video in the Real World', được đúc kết từ phiên hướng dẫn tại hội nghị thị giác máy tính hàng đầu CVPR 2025. 
+
+2
+00:00:15,000 --> 00:00:27,000
+Trong video này, chúng ta sẽ cùng điểm qua những đột phá mới nhất của công nghệ Video Không gian.
+
+3
+00:00:27,000 --> 00:00:39,000
+Đầu tiên, chúng ta cùng tìm hiểu tổng quan. Video không gian là công nghệ mã hóa cảnh 3D thay đổi theo thời gian thành một biểu diễn thống nhất, cho phép người xem tự do thay đổi góc nhìn.
+
+4
+00:00:39,000 --> 00:00:51,000
+Tuy nhiên, công nghệ này đang đối mặt với nhiều thách thức lớn: Thứ nhất là chi phí tính toán và lưu trữ khổng lồ cho các hình ảnh động. 
+
+5
+00:00:51,000 --> 00:00:55,000
+Thứ hai là những khó khăn đặc thù khi phải xử lý chi tiết con người, cảnh trong nhà hay môi trường đô thị lớn. 
+
+6
+00:00:55,000 --> 00:00:57,000
+Thứ ba là việc phải tìm cách khắc phục chi phí đắt đỏ của các hệ thống phần cứng đa camera. 
+
+7
+00:00:57,000 --> 00:01:05,000
+Mục tiêu tương lai của ngành là biến dữ liệu 4D này thành một 'biểu diễn trung gian' cho các AI đa phương thức.
+
+8
+01:05,000 --> 01:17,000
+Đi sâu vào chi tiết, ở phiên đầu tiên do diễn giả Aleksander Holynski từ Google DeepMind trình bày về việc tạo video không gian chỉ từ một camera đơn. 
+
+9
+01:17,000 --> 01:23,000
+Vấn đề lớn nhất khi dùng một camera là việc thiếu chiều sâu và có rất nhiều góc bị che khuất. 
+
+10
+01:23,000 --> 01:31,000
+Giải pháp đột phá được đưa ra là sử dụng các mô hình Tạo sinh (Diffusion Models) để 'ảo giác' hay dự đoán bù đắp vào các phần bị che khuất đó. 
+
+11
+01:31,000 --> 01:46,000
+Ý nghĩa của phương pháp này là vô cùng to lớn: Nó cho phép người dùng phổ thông có thể tạo ra các video 3D chất lượng chỉ bằng một chiếc smartphone thông thường.
+
+12
+01:46,000 --> 01:58,000
+Đến với chủ đề tái tạo con người động (Dynamic 4D Humans) do diễn giả Lan Xu trình bày. 
+
+13
+01:58,000 --> 02:07,000
+Tái tạo con người cực kỳ khó vì bề mặt chứa quá nhiều chi tiết như khớp nối, da, tóc và nếp gấp quần áo.
+
+14
+02:07,000 --> 02:17,000
+Thay vì xử lý tất cả cùng lúc, giải pháp được đưa ra là tách biệt hoàn toàn phần chuyển động (tức là Khung xương - Motion) và phần ngoại hình (Bề mặt - Appearance) bằng kiến trúc mạng Dual-Gaussian. 
+
+15
+02:17,000 --> 02:34,000
+Nhờ sự tách biệt này, chúng ta có thể ứng dụng vào các hệ thống như 'Reperformer', cho phép điều khiển chuyển động của người biểu diễn 3D một cách vô cùng chân thực.
+
+16
+02:34,000 --> 02:47,000
+Ở phiên thứ ba, diễn giả Christian Richardt từ Meta Reality Labs bàn về các không gian đắm chìm. 
+
+17
+02:47,000 --> 02:59,000
+Vấn đề là việc render các vật lý ánh sáng và âm thanh trên kính VR tiêu tốn quá nhiều tài nguyên máy tính. Nhóm nghiên cứu đã đưa ra các giải pháp như kết hợp mạng NeRF với trường khoảng cách có dấu SDF để giảm số lượng mẫu tính toán, đồng thời sử dụng Real Acoustics Fields để tổng hợp âm thanh không gian dội âm. 
+
+18
+02:59,000 --> 03:09,000
+Ngoài ra, cảm biến Time-of-Flight cũng được dùng để khắc phục các vùng tối và bề mặt phản chiếu.
+
+19
+03:09,000 --> 03:22,000
+Công nghệ này cũng thay đổi hoàn toàn ngành Xe tự hành (Autonomous Vehicles), được trình bày bởi Boris Ivanovic từ NVIDIA. 
+
+20
+03:22,000 --> 03:36,000
+Thử nghiệm xe tự hành thực tế rủi ro và rất đắt đỏ, trong khi mô phỏng cũ lại thiếu sai số tích lũy. Như các bạn đang thấy trên đồ họa, giải pháp mới tạo ra một vòng lặp mô phỏng khép kín (Closed-loop Simulation). 
+
+21
+03:36,000 --> 04:00,000
+Ở đó, các nhà phát triển sử dụng NeRF hoặc Gaussian Splats kết hợp với các mô hình tạo video như DreamDrive để tự động tạo ra những góc nhìn giao thông đa dạng, giúp huấn luyện AI xe tự lái an toàn và hiệu quả.
+
+22
+04:00,000 --> 04:13,000
+Bất chấp những ưu điểm trên, vấn đề lưu trữ lại là một rào cản lớn. Diễn giả Yiyi Liao cho biết các mô hình Gaussian Splats tốn đến hàng Gigabyte dung lượng, gây nghẽn đường truyền mạng. 
+
+23
+04:13,000 --> 04:32,000
+Giải pháp đưa ra là tích hợp mô phỏng nén ngay từ đầu quá trình huấn luyện, áp dụng lượng tử hóa và giảm Entropy. Nhờ chia tách không gian gốc và thuộc tính thay đổi theo thời gian, dung lượng băng thông đã giảm xuống dưới 50 Mbps. 
+
+24
+04:32,000 --> 04:45,000
+Hiện tại, nhóm MPEG cũng đang tiến hành tiêu chuẩn hóa để đưa định dạng này vào mã hóa công nghiệp.
+
+25
+04:45,000 --> 05:00,000
+Cuối cùng, để có thể gọi video 3D trực tuyến, hệ thống cần tính năng streaming thời gian thực. Diễn giả Sharath Girish chỉ ra khó khăn khi hệ thống phải cập nhật và giải mã liên tục trên luồng dữ liệu online.
+
+26
+05:00,000 --> 05:10,000
+Giải pháp ở đây là Mô hình Queen: chỉ 'Cập nhật phần dư' và 'Phân bổ thưa thớt'. Thay vì render lại toàn cảnh, hệ thống chỉ tính toán và cập nhật vị trí của các điểm ảnh bị động (như chấm đỏ đang dịch chuyển trên lưới tọa độ), đồng thời đóng băng các cảnh vật tĩnh. 
+
+27
+05:10,000 --> 05:22,000
+Ý nghĩa của kỹ thuật này là giúp giảm dung lượng xuống 10 lần mà vẫn duy trì được tốc độ render mượt mà.
+
+28
+05:22,000 --> 05:35,000
+Tóm lại, Volumetric Video đang dần bước ra khỏi phòng thí nghiệm để tiến vào các ứng dụng thực tiễn từ giải trí, hội họp đến công nghiệp tự động hóa. Phần báo cáo của chúng em đến đây là kết thúc. Cảm ơn thầy cô và các bạn đã chú ý theo dõi.
